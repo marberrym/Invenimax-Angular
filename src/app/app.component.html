@@ -5,11 +5,16 @@
 </nav>
 <div class="header">
   <img src='../assets/inventory.png' class="logo">
-  <h1>
-    Invenimax
-  </h1>
+  <div class="nameTag">
+    <h1>
+      Inveni<span class="max">max</span>
+    </h1>
+    <div class="tagline"><span class="max">Maximum</span> Control Over Your Inventory</div>
+  </div>
 </div>
 
+
+<app-location-form></app-location-form>
 <div *ngIf="error">{{error}}</div>
 <div *ngIf="success">{{success}}</div>
     

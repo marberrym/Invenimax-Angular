@@ -1,0 +1,32 @@
+.formContainer {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formContainer h2 {
+    margin: 1em;
+}
+
+.formContainer form {
+    width: 40%;
+    background-color: rgba(223, 35, 41, 0.9);
+    padding: 3em;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(197, 11, 21);
+}
+
+form div {
+    width: 100%;
+}
+
+.btn {
+    background-color: rgb(231, 240, 248);
+    width: 10em;
+    color: black;
+    border-color: black;
+}
