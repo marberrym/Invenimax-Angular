@@ -4,12 +4,12 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'inventorymgmt');
+define('DB_NAME', 'postgres://matt@localhost:5432/inventorymgmt');
 
 // Connect with the database.
 function connect()
 {
-  $connect = pg_connect(`dbname=inventorymgmt host=localhost port=5432 user=matt`);
+  $connect = pg_connect(`user=matt host=localhost dbname=inventorymgmt`);
   $status = pg_connection_status($connect);
   echo $status;
 

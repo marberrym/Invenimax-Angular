@@ -10,7 +10,7 @@ import { LocationService } from './location.service';
 })
 export class AppComponent implements OnInit {
   title = 'inventoryMGMT';
-  locations = Location[];
+  locations: Location[];
   error = '';
   success = '';
 
