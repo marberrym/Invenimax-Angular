@@ -5,12 +5,14 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LocationForm } from './locationForm.component';
+import { LocationForm } from './Components/LocationForm/locationForm.component';
+import { GradientButtonComponent } from './Components/Buttons/GradientButton/gradientButton.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LocationForm
+    LocationForm,
+    GradientButtonComponent
   ],
   imports: [
     BrowserModule,
