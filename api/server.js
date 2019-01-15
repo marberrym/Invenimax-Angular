@@ -19,14 +19,14 @@ const app = express();
 // });
 
 //Routes Imports
+const getLocations = require('./routes/getLocations');
 
 //App setup
 app.use(bodyParser.json());
 app.use(allowCORS);
 
 //Endpoints
+app.get('/locations', getLocations);
 
 //Start Server
-// app.listen(5000);
-
-console.log(process.env.DB_USER);
+app.listen(5000);

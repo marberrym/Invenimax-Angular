@@ -12,13 +12,13 @@ import { Location } from './location';
 
 export class LocationService {
 
-  baseUrl = 'http://localhost/api';
+  baseUrl = 'http://localhost:5000';
   locations: Location[];
 
   constructor(private http: HttpClient) {}
 
   getAll(): Observable<Location[]> {
-    return this.http.get(`${this.baseUrl}/list`).pipe(
+    return this.http.get(`${this.baseUrl}/locations`).pipe(
       map((res) => {
         this.locations = res['data'];
         return this.locations;
