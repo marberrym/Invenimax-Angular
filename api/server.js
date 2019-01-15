@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config()
 
 //NPM modules
 const express = require('express');
@@ -12,10 +12,11 @@ const secret = process.env.JWTSECRET;
 const allowCORS = require('./middleware/allowCORS');
 
 const app = express();
-const protect = expressJwt({
-    secret,
-    getToken: (req) => req.headers.token
-});
+
+// const protect = expressJwt({
+//     secret,
+//     getToken: (req) => req.headers.token
+// });
 
 //Routes Imports
 
@@ -26,7 +27,6 @@ app.use(allowCORS);
 //Endpoints
 
 //Start Server
-app.listen(5000);
+// app.listen(5000);
 
-
-console.log(process.env.HOST);
+console.log(process.env.DB_USER);
