@@ -13,10 +13,11 @@ const allowCORS = require('./middleware/allowCORS');
 
 const app = express();
 
-// const protect = expressJwt({
-//     secret,
-//     getToken: (req) => req.headers.token
-// });
+//Protect JWT Token
+const protect = expressJwt({
+    secret,
+    getToken: (req) => req.headers.token
+});
 
 //Routes Imports
 const getLocations = require('./routes/getLocations');
