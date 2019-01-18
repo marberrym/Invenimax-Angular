@@ -1,8 +1,11 @@
 export class Location {
     constructor(
         public name: string,
-        public location: string,
+        public address: string,
+        public city: string,
+        public state: number,
+        public item: string,
         public quantity: number,
-        public id?: number,
+        private id?: number,
     ) {} 
 }

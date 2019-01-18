@@ -9,17 +9,20 @@ import { Location } from './location';
 
 export class LocationForm {
 
-    model = new Location("Sage", "Atlanta", 500);
-
+    // model = new Location("Sage", "Atlanta", 500);
+    model = new Location("", "", "", 0, "", 0);
     submitted = false;
+
+    ngOnInit() {
+    }
 
     onSubmit() {
         this.submitted = true;
     }
 
     // Remove later.
-    get diagnostic() {
-        return JSON.stringify(this.model);
-    }
+    // get diagnostic() {
+    //     return JSON.stringify(this.model);
+    // }
 
 }
