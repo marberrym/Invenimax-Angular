@@ -34,6 +34,7 @@
                 <select [(ngModel)]="model.state" name="state" class="form-control" id="state" required>
                     <option *ngFor= "let state of states" value="{{ state }}">{{ state }}</option>
                 </select>
+                <div>state is {{ model.state }}</div>
             </div>
         </div>
         <div class="form-group">
