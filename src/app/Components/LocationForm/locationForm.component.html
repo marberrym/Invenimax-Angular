@@ -29,6 +29,14 @@
             <div>city is {{ model.city }}</div>
         </div>
         <div class="form-group">
+            <label for="city">Location State:</label>
+            <div>
+                <select [(ngModel)]="model.state" name="state" class="form-control" id="state" required>
+                    <option *ngFor= "let state of states" value="{{ state }}">{{ state }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="name">Quantity:</label>
             <input [(ngModel)]="model.quantity"
                 name="quantity"
