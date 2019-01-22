@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Location } from './Components/LocationForm/location';
-import { LocationService } from './Components/LocationForm/location.service';
+import { Location } from './components/location-form/location';
+import { LocationService } from './components/location-form/location.service';
 
 @Component({
   selector: 'app-root',
