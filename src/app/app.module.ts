@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LocationForm } from './components/location-form/locationForm.component';
 import { GradientButtonComponent } from './components/buttons/gradient-button/gradientButton.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { AboutComponent } from './screens/about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LocationForm,
     GradientButtonComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

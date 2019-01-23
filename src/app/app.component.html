@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navBar">
     <a routerLink="/about" routerLinkActive="active">About Me</a>
-    <a routerLink="/locations" routerLinkActive="active">Locations</a>
+    <a routerLink="/location" routerLinkActive="active">Locations</a>
 </nav>
+
 <div class="header">
   <img src='../assets/inventory.png' class="logo">
   <div class="nameTag">
@@ -16,29 +17,16 @@
 
 
 
-<app-login-form></app-login-form>
+<!-- <app-login-form></app-login-form>
 <app-location-form></app-location-form>
 <div *ngIf="error">{{error}}</div>
-<div *ngIf="success">{{success}}</div>
+<div *ngIf="success">{{success}}</div> -->
     
-<div id="theList">
+<!-- <div id="theList">
   <h2>The list</h2>
   <ul>
     <li *ngFor="let item of locations">{{item.name}} | {{item.address}} </li>
   </ul>
-</div>
-
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+</div> -->
 
 <router-outlet></router-outlet>
