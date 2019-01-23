@@ -1,0 +1,57 @@
+<div class="formContainer">
+  <form #f="ngForm">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input [(ngModel)]="model.name" 
+            name="name" 
+            type="text" 
+            class="form-control" 
+            id="name" required>
+        <div>name is {{ model.name }}</div>
+    </div>
+    <div class="form-group">
+        <label for="org">Organization:</label>
+        <input [(ngModel)]="model.org" 
+            name="org" 
+            type="text" 
+            class="form-control" 
+            id="org" required>
+        <div>Organization is {{ model.org }}</div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input [(ngModel)]="model.email" 
+            name="email" 
+            type="email" 
+            class="form-control" 
+            id="email" required>
+        <div>name is {{ model.email }}</div>
+    </div>
+    <div class="form-group">
+        <label for="pw">Password:</label>
+        <input [(ngModel)]="model.pw"
+            name="pw"
+            type="password" 
+            class="form-control" 
+            id="pw" required>
+        <div>pw is {{ model.pw }}</div>
+    </div>
+    <div class="form-group">
+        <label for="pwV">password verify:</label>
+        <input [(ngModel)]="model.pwv"
+            name="pwv"
+            type="password" 
+            class="form-control" 
+            id="pwv" required>
+        <div>pw is {{ model.pwv }}</div>
+    </div>
+    <app-gradient-button (click)="onSubmit()">Submit</app-gradient-button>
+  </form>
+    <!-- <p>
+      login-form works!
+    </p> -->
+</div>
+
+<p>
+  sign-up works!
+</p>

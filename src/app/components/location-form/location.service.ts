@@ -21,6 +21,7 @@ export class LocationService {
     return this.http.get(`${this.baseUrl}/locations`).pipe(
       map((res) => {
         this.locations = res['data'];
+        console.log(res)
         return this.locations;
       }),
       catchError(this.handleError))

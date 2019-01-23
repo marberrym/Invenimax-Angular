@@ -1,7 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navBar">
-    <a routerLink="/about" routerLinkActive="active">About Me</a>
-    <a routerLink="/location" routerLinkActive="active">Locations</a>
+  <div class="flexNav">
+    <a routerLink="/" routerLinkActive="active">
+      <img src="../assets/inventory.png" class="navLogo">
+    </a>
+    <a routerLink="/" routerLinkActive="active" class="navLink">Home</a>
+    <a routerLink="/about" routerLinkActive="active" class="navLink">About Me</a>
+    <a routerLink="/location" routerLinkActive="active" class="navLink">Locations</a>
+  </div>
+  <div class="flexNav">
+    <a routerLink="/signup" routerLinkActive="active" class="navLink">Sign Up</a>
+    <a routerLink="/login" routerLinkActive="active" class="navLink">Log In</a>
+  </div>
 </nav>
 
 <div class="header">

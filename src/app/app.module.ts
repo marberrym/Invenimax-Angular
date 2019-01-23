@@ -9,6 +9,7 @@ import { LocationForm } from './components/location-form/locationForm.component'
 import { GradientButtonComponent } from './components/buttons/gradient-button/gradientButton.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { AboutComponent } from './screens/about/about.component';
+import { SignUpComponent } from './screens/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AboutComponent } from './screens/about/about.component';
     LocationForm,
     GradientButtonComponent,
     LoginFormComponent,
-    AboutComponent
+    AboutComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
