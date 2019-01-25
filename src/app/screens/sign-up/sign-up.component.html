@@ -6,9 +6,14 @@
             name="name" 
             type="text" 
             class="form-control" 
-            id="name" required #name>
+            id="name" required #name="ngModel">
         <div>name is {{ model.name }}</div>
         <div>name classes {{ name.className }}</div>
+        <div>{{ name.valid }} {{ name.pristine }}</div>
+        <div [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+            Invalid Input
+        </div>
     </div>
     <div class="form-group">
         <label for="org">Organization:</label>
