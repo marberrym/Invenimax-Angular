@@ -6,8 +6,9 @@
             name="name" 
             type="text" 
             class="form-control" 
-            id="name" required>
+            id="name" required #name>
         <div>name is {{ model.name }}</div>
+        <div>name classes {{ name.className }}</div>
     </div>
     <div class="form-group">
         <label for="org">Organization:</label>
