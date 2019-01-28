@@ -7,9 +7,6 @@
             type="text" 
             class="form-control" 
             id="name" required #name="ngModel">
-        <div>name is {{ model.name }}</div>
-        <div>name classes {{ name.className }}</div>
-        <div>{{ name.valid }} {{ name.pristine }}</div>
         <div [hidden]="name.valid || name.pristine"
             class="alert alert-danger">
             Invalid Input
@@ -21,17 +18,24 @@
             name="org" 
             type="text" 
             class="form-control" 
-            id="org" required>
-        <div>Organization is {{ model.org }}</div>
+            id="org" required #org="ngModel">
+        <div [hidden]="org.valid || org.pristine"
+            class="alert alert-danger">
+            Invalid Input
+        </div>
     </div>
     <div class="form-group">
         <label for="email">Email:</label>
         <input [(ngModel)]="model.email" 
-            name="email" 
+            name="email"
+            [email]="true" 
             type="email" 
             class="form-control" 
-            id="email" required>
-        <div>name is {{ model.email }}</div>
+            id="email" required #email="ngModel">
+        <div [hidden]="email.valid || email.pristine"
+            class="alert alert-danger">
+            Invalid Input
+        </div>
     </div>
     <div class="form-group">
         <label for="pw">Password:</label>
@@ -39,8 +43,11 @@
             name="pw"
             type="password" 
             class="form-control" 
-            id="pw" required>
-        <div>pw is {{ model.pw }}</div>
+            id="pw" required #pw="ngModel">
+        <div [hidden]="pw.valid || pw.pristine"
+            class="alert alert-danger">
+            Invalid Input
+        </div>
     </div>
     <div class="form-group">
         <label for="pwV">password verify:</label>
@@ -48,16 +55,12 @@
             name="pwv"
             type="password" 
             class="form-control" 
-            id="pwv" required>
-        <div>pw is {{ model.pwv }}</div>
+            id="pwv" required #pwv="ngModel">
+        <div [hidden]="model.pwv === model.pw || pwv.pristine"
+            class="alert alert-danger">
+            Must match password.
+        </div>
     </div>
     <app-gradient-button (click)="onSubmit()">Submit</app-gradient-button>
   </form>
-    <!-- <p>
-      login-form works!
-    </p> -->
 </div>
-
-<p>
-  sign-up works!
-</p>
