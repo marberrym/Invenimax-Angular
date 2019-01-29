@@ -21,6 +21,7 @@ const protect = expressJwt({
 
 //Routes Imports
 const getLocations = require('./routes/getLocations');
+const signUp = require('./routes/signUp');
 
 //App setup
 app.use(bodyParser.json());
@@ -28,6 +29,7 @@ app.use(allowCORS);
 
 //Endpoints
 app.get('/locations', getLocations);
+app.post('/signup', signUp);
 
 //Start Server
 app.listen(5000);

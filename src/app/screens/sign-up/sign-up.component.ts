@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SignUp } from './sign-up';
-import { HttpClient } from '@angular/common/http';
+import { SignUpService } from './sign-up.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,25 +9,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SignUpComponent implements OnInit {
 
-  model = new SignUp("", "", "", "", "")
+  model = new SignUp()
   submit = false;
 
-  constructor(private http: HttpClient) { }
+  constructor(private signUpService: SignUpService) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    let data = {
-      name: this.model.name,
-      org: this.model.org,
-      email: this.model.email,
-      password: this.model.pw
-    }
-
-    // this.http.post()
-    console.log(data);
     
+    console.log(this.model);
+    this.signUpService.signUp(this.model);
     console.log("submission received");
     this.submit = true;
   }
