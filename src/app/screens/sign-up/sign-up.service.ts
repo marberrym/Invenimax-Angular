@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { SignUp } from './sign-up';
 import { Observable, of, throwError } from 'rxjs';
@@ -22,14 +23,20 @@ export class SignUpService {
   public signUp(data: SignUp) {
     console.log("Runs Function.")
     return this.http.post(this.endPoint, data, this.httpOptions)
-      .subscribe(res => console.log(res))
+      .subscribe(res => {
+        console.log(res)
+        this.router.navigate(['login'])
+      })
   }
 
   public handleError(err) {
     console.log(err)
   }
   
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   
 }
