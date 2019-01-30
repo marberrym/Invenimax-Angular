@@ -20,7 +20,7 @@ export class SignUpService {
     return this.http.post(this.endPoint, data, this.httpOptions)
       .subscribe(res => {
         console.log(res)
-        this.router.navigate(['login'])
+        this.router.navigate([''])
       })
   }
   

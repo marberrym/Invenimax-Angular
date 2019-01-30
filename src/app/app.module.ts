@@ -10,6 +10,7 @@ import { GradientButtonComponent } from './components/buttons/gradient-button/gr
 import { LoginComponent } from './screens/login/login.component';
 import { AboutComponent } from './screens/about/about.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
+import { RegButtonComponent } from './components/buttons/reg-button/reg-button.component'
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SignUpComponent } from './screens/sign-up/sign-up.component';
     GradientButtonComponent,
     LoginComponent,
     AboutComponent,
-    SignUpComponent
+    SignUpComponent,
+    RegButtonComponent
   ],
   imports: [
     BrowserModule,

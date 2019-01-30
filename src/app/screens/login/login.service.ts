@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Login } from './login';
+import { LoginResponse } from './login-response';
+import { Observable, Subscription } from 'rxjs';
 
 
 
@@ -19,12 +21,19 @@ export class LoginService {
       'Content-Type': 'application/json'
     })
   }
+  model = new LoginResponse('success')
 
-  public login(data: Login) {
+  login(data: Login): Subscription {
+    console.log(this.model)
     return this.http.post(this.endPoint, data, this.httpOptions)
       .subscribe(res => {
         console.log(res)
-        this.router.navigate([''])
+        if (res.status === 'success') {
+          window.localStorage.setItem('IMToken', res.token);
+          // this.router.navigate([''])
+        } else {
+          console.log('invalid login')
+        }
       })
   }
 
