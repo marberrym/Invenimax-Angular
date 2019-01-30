@@ -3,11 +3,11 @@ import { Location } from './location';
 
 @Component({
     selector: 'app-location-form',
-    templateUrl: './locationForm.component.html',
-    styleUrls: ['./locationForm.component.css']
+    templateUrl: './location.component.html',
+    styleUrls: ['./location.component.css']
 })
 
-export class LocationForm {
+export class LocationComponent {
 
     // model = new Location("Sage", "Atlanta", 500);
     model = new Location("", "", "", 0, "", 0);

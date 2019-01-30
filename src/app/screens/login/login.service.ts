@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { SignUp } from './sign-up';
+import { Login } from './login';
+
+
+
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SignUpService {
-  endPoint = 'http://localhost:5000/signup'
+export class LoginService {
+
+  endPoint = "http://localhost:5000/login"
 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
-  
-  public signUp(data: SignUp) {
+
+  public login(data: Login) {
     return this.http.post(this.endPoint, data, this.httpOptions)
       .subscribe(res => {
         console.log(res)
-        this.router.navigate(['login'])
+        this.router.navigate([''])
       })
   }
-  
+
   constructor(
     private http: HttpClient,
     private router: Router
-  ) {}
-
-  
+  ) { }
 }
