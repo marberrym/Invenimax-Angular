@@ -4,10 +4,7 @@ import { Router } from '@angular/router';
 import { Login } from './login';
 import { LoginResponse } from './login-response';
 import { Observable, Subscription } from 'rxjs';
-
-
-
-
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +21,7 @@ export class LoginService {
   model = new LoginResponse('success')
 
   login(data: Login): Subscription {
-    console.log(this.model)
-    return this.http.post(this.endPoint, data, this.httpOptions)
+    return this.http.post<LoginResponse>(this.endPoint, data, this.httpOptions)
       .subscribe(res => {
         console.log(res)
         if (res.status === 'success') {
