@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  loggedin = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+    if (window.localStorage.IMToken) {
+      this.loggedin = true;
+    }
+  }
+
+  onLogout() {
+    this.loggedin = false;
+    window.localStorage.removeItem("IMToken");
+    this.router.navigate(['']);
   }
 
 }

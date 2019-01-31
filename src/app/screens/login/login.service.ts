@@ -26,7 +26,7 @@ export class LoginService {
         console.log(res)
         if (res.status === 'success') {
           window.localStorage.setItem('IMToken', res.token);
-          // this.router.navigate([''])
+          this.router.navigate([''])
         } else {
           console.log('invalid login')
         }

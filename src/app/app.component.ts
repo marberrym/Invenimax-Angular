@@ -13,11 +13,15 @@ export class AppComponent implements OnInit {
   locations: Location[];
   error = '';
   success = '';
+  isLoggedIn = false;
 
   constructor(private locationService: LocationService) {
   }
 
   ngOnInit() {
+    if(window.localStorage.IMToken) {
+      this.isLoggedIn = true;
+    }
     this.getLocations();
   }
 

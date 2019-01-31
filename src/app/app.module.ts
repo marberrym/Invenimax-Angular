@@ -11,7 +11,8 @@ import { LoginComponent } from './screens/login/login.component';
 import { AboutComponent } from './screens/about/about.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { RegButtonComponent } from './components/buttons/reg-button/reg-button.component';
-import { NavbarComponent } from './components/navbar/navbar.component'
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ImheadComponent } from './components/imhead/imhead.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { NavbarComponent } from './components/navbar/navbar.component'
     AboutComponent,
     SignUpComponent,
     RegButtonComponent,
-    NavbarComponent
+    NavbarComponent,
+    ImheadComponent
   ],
   imports: [
     BrowserModule,

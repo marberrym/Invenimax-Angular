@@ -1,0 +1,38 @@
+.logo {
+    height: 10em;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    
+}
+
+h1 {
+    font-family: 'Staatliches', cursive;
+    font-size: 6em;
+}
+
+.tagline {
+    font-size: 1.5em;
+    font-family: 'Staatliches', cursive;
+}
+
+.nameTag h1 {
+    margin: 0;
+    padding: 0;
+    line-height: .8em;
+}
+
+.nameTag {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.max {
+    color: rgb(197, 11, 21);
+}
