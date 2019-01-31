@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Login } from './login';
 import { LoginService } from './login.service';
+import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-login-form',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     console.log(this.model);
     this.loginService.login(this.model);
+    
   }
 
 }

@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Login } from './login';
 import { LoginResponse } from './login-response';
-import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 export class LoginService {
 
   endPoint = "http://localhost:5000/login"
+  isLoggedIn = false;
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -26,6 +27,7 @@ export class LoginService {
         console.log(res)
         if (res.status === 'success') {
           window.localStorage.setItem('IMToken', res.token);
+          this.isLoggedIn = true;
           this.router.navigate([''])
         } else {
           console.log('invalid login')
@@ -35,6 +37,6 @@ export class LoginService {
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
   ) { }
 }
