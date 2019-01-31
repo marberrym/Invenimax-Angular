@@ -1,18 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<nav class="navBar">
-  <div class="flexNav">
-    <a routerLink="/" routerLinkActive="active">
-      <img src="../assets/inventory.png" class="navLogo">
-    </a>
-    <a routerLink="/" routerLinkActive="active" class="navLink">Home</a>
-    <a routerLink="/about" routerLinkActive="active" class="navLink">About Me</a>
-    <a routerLink="/location" routerLinkActive="active" class="navLink">Locations</a>
-  </div>
-  <div class="flexNav">
-    <a routerLink="/signup" routerLinkActive="active" class="navLink">Sign Up</a>
-    <a routerLink="/login" routerLinkActive="active" class="navLink">Log In</a>
-  </div>
-</nav>
+<app-navbar></app-navbar>
 
 <div class="header">
   <img src='../assets/inventory.png' class="logo">
@@ -22,21 +9,6 @@
     </h1>
     <div class="tagline"><span class="max">Maximum</span> Control Over Your Inventory</div>
   </div>
-  <app-gradient-button>Submit</app-gradient-button>
 </div>
-
-
-
-<!-- <app-login-form></app-login-form>
-<app-location-form></app-location-form>
-<div *ngIf="error">{{error}}</div>
-<div *ngIf="success">{{success}}</div> -->
-    
-<!-- <div id="theList">
-  <h2>The list</h2>
-  <ul>
-    <li *ngFor="let item of locations">{{item.name}} | {{item.address}} </li>
-  </ul>
-</div> -->
 
 <router-outlet></router-outlet>

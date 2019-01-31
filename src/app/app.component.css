@@ -1,12 +1,3 @@
-.navBar {
-    width: 100%;
-    height: 3em;
-    background-color: rgb(248, 243, 232);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-}
 
 .logo {
     height: 10em;
@@ -45,21 +36,4 @@ h1 {
 
 .max {
     color: rgb(197, 11, 21);
-}
-
-.navLink {
-    margin: .5em;
-    color: red;
-}
-
-.flexNav {
-    margin: 1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.navLogo {
-    height: 2.5em;
-    margin: .5em;
 }
