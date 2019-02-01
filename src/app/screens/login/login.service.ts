@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Login } from './login';
 import { LoginResponse } from './login-response';
 import { Subscription } from 'rxjs';
+
 
 
 @Injectable({
@@ -13,6 +14,8 @@ export class LoginService {
 
   endPoint = "http://localhost:5000/login"
   isLoggedIn = false;
+
+  @Output() change: EventEmitter<boolean> = new EventEmitter()
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -28,6 +31,7 @@ export class LoginService {
         if (res.status === 'success') {
           window.localStorage.setItem('IMToken', res.token);
           this.isLoggedIn = true;
+          this.change.emit(this.isLoggedIn)
           this.router.navigate([''])
         } else {
           console.log('invalid login')
