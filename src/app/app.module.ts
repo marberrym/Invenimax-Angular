@@ -12,7 +12,8 @@ import { AboutComponent } from './screens/about/about.component';
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { RegButtonComponent } from './components/buttons/reg-button/reg-button.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ImheadComponent } from './components/imhead/imhead.component'
+import { ImheadComponent } from './components/imhead/imhead.component';
+import { MyLocationsComponent } from './screens/my-locations/my-locations.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ImheadComponent } from './components/imhead/imhead.component'
     SignUpComponent,
     RegButtonComponent,
     NavbarComponent,
-    ImheadComponent
+    ImheadComponent,
+    MyLocationsComponent
   ],
   imports: [
     BrowserModule,

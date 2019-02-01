@@ -4,12 +4,14 @@ import { AboutComponent } from './screens/about/about.component'
 import { LocationComponent } from './screens/location/location.component'
 import { SignUpComponent } from './screens/sign-up/sign-up.component';
 import { LoginComponent } from './screens/login/login.component';
+import { MyLocationsComponent } from './screens/my-locations/my-locations.component';
 
 const routes: Routes = [
   {path: 'about', component: AboutComponent},
-  {path: 'location', component: LocationComponent},
+  {path: 'locations', component: MyLocationsComponent},
   {path: 'signup', component: SignUpComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'newlocation', component: LocationComponent},
   // {path: 'about', component: },
   // {path: '', component: }
 ]
