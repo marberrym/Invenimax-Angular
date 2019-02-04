@@ -9,8 +9,7 @@ import { Location } from './location';
 
 export class LocationComponent {
 
-    // model = new Location("Sage", "Atlanta", 500);
-    model = new Location("", "", "", 0, "", 0);
+    model = new Location();
     submitted = false;
 
     states = [

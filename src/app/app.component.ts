@@ -10,30 +10,10 @@ import { LocationService } from './screens/location/location.service';
 })
 export class AppComponent implements OnInit {
   title = 'inventoryMGMT';
-  locations: Location[];
-  error = '';
-  success = '';
-  isLoggedIn = false;
 
-  constructor(private locationService: LocationService) {
+  constructor() {
   }
 
   ngOnInit() {
-    if(window.localStorage.IMToken) {
-      this.isLoggedIn = true;
-    }
-    this.getLocations();
-  }
-
-  getLocations(): void {
-    this.locationService.getAll().subscribe(
-      (res: Location[]) => {
-        this.locations = res;
-      },
-      (err) => {
-        this.error = err;
-      }
-    )
-
   }
 }
