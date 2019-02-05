@@ -16,7 +16,7 @@ export class MyLocationsService {
   baseUrl = 'http://localhost:5000/locations';
   locations: Location[];
 
-  getAll(): Observable<Location[]> {
+  getUserLocations(): Observable<Location[]> {
     return this.http.get(this.baseUrl).pipe(
       map((res) => {
         this.locations = res['data'];

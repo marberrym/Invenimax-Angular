@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LocationComponent } from './screens/location/location.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MaterialModule } from './material.module'
+
+import { NewLocationComponent } from './screens/new-location/new-location.component';
 import { GradientButtonComponent } from './components/buttons/gradient-button/gradientButton.component';
 import { LoginComponent } from './screens/login/login.component';
 import { AboutComponent } from './screens/about/about.component';
@@ -18,7 +20,7 @@ import { MyLocationsComponent } from './screens/my-locations/my-locations.compon
 @NgModule({
   declarations: [
     AppComponent,
-    LocationComponent,
+    NewLocationComponent,
     GradientButtonComponent,
     LoginComponent,
     AboutComponent,
@@ -26,13 +28,15 @@ import { MyLocationsComponent } from './screens/my-locations/my-locations.compon
     RegButtonComponent,
     NavbarComponent,
     ImheadComponent,
-    MyLocationsComponent
+    MyLocationsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

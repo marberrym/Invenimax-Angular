@@ -19,7 +19,7 @@ export class MyLocationsComponent implements OnInit {
   }
 
   getLocations(): void {
-    this.myLocationService.getAll().subscribe(
+    this.myLocationService.getUserLocations().subscribe(
       (res: Location[]) => {
         this.locations = res;
       },

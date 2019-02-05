@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { Location } from './location';
+import { NewLocationService } from './new-location.service'
 
 @Component({
-    selector: 'app-location-form',
-    templateUrl: './location.component.html',
-    styleUrls: ['./location.component.css']
+    selector: 'app-new-location-form',
+    templateUrl: './new-location.component.html',
+    styleUrls: ['./new-location.component.css']
 })
 
-export class LocationComponent {
+export class NewLocationComponent {
+
+    constructor(private newLocationService: NewLocationService) {}
 
     model = new Location();
     submitted = false;
@@ -24,6 +27,8 @@ export class LocationComponent {
 
     onSubmit() {
         this.submitted = true;
+        console.log(this.model);
+        this.newLocationService.newLocation(this.model);
     }
 
     // Remove later.
