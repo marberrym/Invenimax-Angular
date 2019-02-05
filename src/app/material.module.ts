@@ -4,6 +4,8 @@ import {
     MatButtonModule,
     MatDatepickerModule,
     MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
     
 } from '@angular/material'
 
@@ -11,12 +13,14 @@ import {
     imports: [
         MatButtonModule,
         MatCardModule,
-        MatDatepickerModule
+        MatDatepickerModule,
+        MatTableModule,
     ],
     exports: [
         MatButtonModule,
         MatCardModule,
         MatDatepickerModule,
+        MatPaginatorModule
     ]
 })
 

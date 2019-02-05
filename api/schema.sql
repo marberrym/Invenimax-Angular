@@ -16,3 +16,35 @@ CREATE TABLE locations (
   city varchar(255) NOT NULL,
   state varchar(255) NOT NULL
 );
+
+CREATE TABLE inventory (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  location_id INTEGER REFERENCES locations(id),
+  item varchar(255) NOT NULL,
+  description varchar(255) NOT NULL,
+  par INTEGER DEFAULT 0
+);
+
+CREATE TABLE inven_bridge (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  location_id INTEGER REFERENCES locations(id),
+  quantity INTEGER DEFAULT 0
+);
+
+CREATE TABLE transactions (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  location_id INTEGER REFERENCES locations(id),
+  inventory_id INTEGER REFERENCES inventory(id),
+  inven_change INTEGER NOT NULL,
+  note varchar(255) DEFAULT ''
+);
+
+CREATE TABLE notes (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  location_id INTEGER REFERENCES locations(id),
+  note varchar(255) NOT NULL
+);

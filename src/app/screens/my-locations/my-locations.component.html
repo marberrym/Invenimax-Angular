@@ -1,3 +1,19 @@
-<a routerLink="/newlocation" routerLinkActive="active"><button mat-raised-button color="accent">Add Location <i class="material-icons">
-    add_circle_outline
-    </i></button></a>
+
+<div class="pageLayout">
+    <a routerLink="/newlocation" routerLinkActive="active">
+        <button mat-raised-button color="accent">Add Location 
+            <i class="material-icons">add_circle_outline</i>
+        </button>
+    </a>
+
+
+    <div class="cardContainer">
+        <mat-card *ngFor="let location of locations" class="card">
+            <mat-card-title>{{ location.name }}</mat-card-title>
+            <mat-card-subtitle>{{ location.address }}</mat-card-subtitle>
+            <mat-card-subtitle>{{ location.city }}, {{ location.state }}</mat-card-subtitle> 
+        </mat-card>
+    </div>
+
+    <div>Click to manage inventory.</div>
+</div>

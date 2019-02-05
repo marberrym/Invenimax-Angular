@@ -1,0 +1,22 @@
+.cardContainer {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    margin: .5em;
+    text-align: center;
+}
+
+.card:hover {
+    background-color: rgb(197, 39, 39);
+}
+
+.pageLayout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
