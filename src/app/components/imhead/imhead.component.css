@@ -1,5 +1,6 @@
 .logo {
     height: 10em;
+    margin: 1em;
 }
 
 .header {
@@ -16,8 +17,9 @@ h1 {
 }
 
 .tagline {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-family: 'Staatliches', cursive;
+    color: rgb(97, 96, 96);
 }
 
 .nameTag h1 {
@@ -33,6 +35,3 @@ h1 {
     align-items: center;
 }
 
-.max {
-    color: rgb(197, 11, 21);
-}
