@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { LocationDetails } from './location-details';
+import { Inventory } from './inventory';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LocationDetailsService {
-  location: LocationDetails
 
   httpOptions = { 
     headers: new HttpHeaders({
@@ -20,10 +20,6 @@ export class LocationDetailsService {
   ) {}
 
   getLocationInfo(id) {
-    console.log(this.httpOptions);
-    this.http.get(this.endPoint + id, this.httpOptions)
-    .subscribe(res => {
-      console.log(res);
-    })
+    return this.http.get<LocationDetails>(this.endPoint + id, this.httpOptions)
   }
 }

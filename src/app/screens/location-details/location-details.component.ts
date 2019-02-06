@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LocationDetailsService } from './location-details.service';
 import { LocationDetails } from './location-details';
+import { Inventory } from './inventory';
 
 @Component({
   selector: 'app-location-details',
@@ -12,6 +13,7 @@ export class LocationDetailsComponent implements OnInit {
 
   locID: string
   locationDetails: LocationDetails
+  inventory: Inventory[]
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +24,11 @@ export class LocationDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.locationService.getLocationInfo(this.locID);
+    this.locationService.getLocationInfo(this.locID)
+    .subscribe(res => {
+      this.locationDetails = res;
+      this.inventory = res.inventory;
+    })
   }
 
   addItem() {
