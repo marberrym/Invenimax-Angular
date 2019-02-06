@@ -14,21 +14,31 @@ let locationDetail = (req, res) => {
     console.log("Path works.");
 
     
-    db.query(
+    let location = db.query(
         `SELECT name, address, city, state 
         FROM locations 
-        WHERE locations.id=$1`, [locID])
-    .then(res => {
-        console.log(res);
-    })
-    
-    db.query(
-        `SELECT * FROM inventory WHERE location_id = $1`, [locID]
+        WHERE locations.id=$1`, [locID]
     )
-    .then(res => {
-        console.log(res);
-        
-        console.log(responseObject);
+    
+
+    let items = db.query(
+        `SELECT * FROM inventory, inven_bridge 
+        WHERE
+        inventory.id = inven_bridge.item_id AND inventory.id=$1
+        `, [locID]
+    )
+    
+    Promise.all([location, items])
+    .then(data => {
+        console.log(data[0]);
+        console.log(data[1]);
+        res.send({
+            name: data[0][0].name,
+            address: data[0][0].address,
+            city: data[0][0].city,
+            state: data[0][0].state,
+            inventory: data[1] 
+        })
     })
 }
 

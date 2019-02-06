@@ -29,7 +29,7 @@ CREATE TABLE inventory (
 CREATE TABLE inven_bridge (
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id),
-  location_id INTEGER REFERENCES locations(id),
+  item_id INTEGER REFERENCES inventory(id),
   quantity INTEGER DEFAULT 0
 );
 
