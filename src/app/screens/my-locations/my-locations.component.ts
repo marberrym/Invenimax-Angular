@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MyLocationsService } from './my-locations.service';
 import { Location } from './location';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-locations',
@@ -9,7 +10,10 @@ import { Location } from './location';
 })
 export class MyLocationsComponent implements OnInit {
 
-  constructor(private myLocationService: MyLocationsService) { }
+  constructor(
+    private myLocationService: MyLocationsService,
+    private router: Router
+  ) { }
 
   locations: Location[];
   error = '';
@@ -27,7 +31,10 @@ export class MyLocationsComponent implements OnInit {
         this.error = err;
       }
     )
+  }
 
+  getLocation(id): void {
+    this.router.navigate(['/location/'], { queryParams: { loc: id }})
   }
 
 }

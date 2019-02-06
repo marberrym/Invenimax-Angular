@@ -6,6 +6,8 @@ import {
     MatCardModule,
     MatTableModule,
     MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule,
     
 } from '@angular/material'
 
@@ -15,12 +17,16 @@ import {
         MatCardModule,
         MatDatepickerModule,
         MatTableModule,
+        MatFormFieldModule,
+        MatInputModule,
     ],
     exports: [
         MatButtonModule,
         MatCardModule,
         MatDatepickerModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatFormFieldModule,
+        MatInputModule,
     ]
 })
 

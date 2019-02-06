@@ -24,14 +24,21 @@ const getLocations = require('./routes/getLocations');
 const signUp = require('./routes/signUp');
 const logIn = require('./routes/logIn');
 const newLocation = require('./routes/newLocation');
+const locationDetail = require('./routes/locationDetail');
+const newItem = require('./routes/newItem.js');
 
 //App setup
 app.use(bodyParser.json());
 app.use(allowCORS);
 
-//Endpoints
+//Location Endpoints
 app.get('/locations', getLocations);
 app.post('/locations', newLocation);
+app.get('/locations/:loc', locationDetail);
+
+//Item Endpoints
+app.post('/item/:loc', newItem);
+
 
 //New User
 app.post('/signup', signUp);

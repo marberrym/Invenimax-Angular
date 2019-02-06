@@ -5,3 +5,33 @@
 body {
     background-color: rgb(231, 240, 248);
 }
+
+.pageLayout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formContainer {
+    background-color: rgba(128, 128, 128, 0.396);
+    padding: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin: 2em;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.415);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40em;
+}
+
+.formInput {
+    width: 100%;
+}
+
+.btn {
+    margin: 2em;
+}

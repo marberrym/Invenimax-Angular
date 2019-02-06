@@ -1,0 +1,24 @@
+<div class="pageLayout">
+  <div class="formContainer">
+    <mat-form-field appearance="standard" class="formInput">
+      <mat-label>Item Name</mat-label>
+      <input matInput placeholder="Item Name" [(ngModel)]="model.item">
+    </mat-form-field>
+    <mat-form-field class="formInput">
+      <mat-label>Item Description</mat-label>
+      <textarea matInput placeholder="Item Description" [(ngModel)]="model.description"></textarea>
+    </mat-form-field>
+    <mat-form-field class="formInput">
+      <mat-label>Par Inventory Count</mat-label>
+      <input matInput placeholder="Par Count" [(ngModel)]="model.par">
+      <mat-hint>The minimum amount you should have on hand at any given time.</mat-hint>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="btn" (click)="addItem()">Add Item 
+        <i class="material-icons">add_circle_outline</i>
+    </button>
+  </div>
+
+  <p>
+    add-item works!
+  </p>
+</div>

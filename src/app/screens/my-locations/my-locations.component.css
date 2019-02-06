@@ -13,10 +13,3 @@
 .card:hover {
     background-color: rgb(197, 39, 39);
 }
-
-.pageLayout {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
