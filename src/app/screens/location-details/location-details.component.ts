@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { LocationDetailsService } from './location-details.service';
 import { LocationDetails } from './location-details';
 import { Inventory } from './inventory';
+import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-location-details',
@@ -14,6 +15,10 @@ export class LocationDetailsComponent implements OnInit {
   locID: string
   locationDetails: LocationDetails
   inventory: Inventory[]
+  dataSource = new MatTableDataSource<Inventory>(this.inventory);
+  
+
+  columnsToDisplay = ['item_id', 'item', 'description', 'par', 'quantity'];
 
   constructor(
     private route: ActivatedRoute,

@@ -8,7 +8,6 @@ import {
     MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    
 } from '@angular/material'
 
 @NgModule({
@@ -26,6 +25,7 @@ import {
         MatDatepickerModule,
         MatPaginatorModule,
         MatFormFieldModule,
+        MatTableModule,
         MatInputModule,
     ]
 })
