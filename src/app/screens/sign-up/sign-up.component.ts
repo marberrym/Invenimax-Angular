@@ -18,7 +18,6 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit() {
-    
     console.log(this.model);
     this.signUpService.signUp(this.model);
     console.log("submission received");
