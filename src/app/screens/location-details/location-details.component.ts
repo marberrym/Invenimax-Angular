@@ -15,10 +15,9 @@ export class LocationDetailsComponent implements OnInit {
   locID: string
   locationDetails: LocationDetails
   inventory: Inventory[]
-  dataSource = new MatTableDataSource<Inventory>(this.inventory);
+  dataSource: any
   
-
-  columnsToDisplay = ['item_id', 'item', 'description', 'par', 'quantity'];
+  displayed = ['item_id', 'item', 'description', 'par', 'quantity'];
 
   constructor(
     private route: ActivatedRoute,
@@ -31,8 +30,10 @@ export class LocationDetailsComponent implements OnInit {
   ngOnInit() {
     this.locationService.getLocationInfo(this.locID)
     .subscribe(res => {
+      console.log(res);
       this.locationDetails = res;
       this.inventory = res.inventory;
+      this.dataSource = new MatTableDataSource<Inventory>(this.inventory);
     })
   }
 

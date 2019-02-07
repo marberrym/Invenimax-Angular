@@ -5,7 +5,7 @@ export class LocationDetails {
         public name: string,
         public address: string,
         public state: string,
-        public inventory: Array<Inventory>,
+        public inventory: Inventory[] = [],
         public id: number,
     ){}
 }
