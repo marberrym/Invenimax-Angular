@@ -3,5 +3,6 @@ export class Item {
         public item: string = '',
         public description: string = '',
         public par: number = 0,
+        public quantity: number = 0,
     ){}
 }

@@ -4,9 +4,9 @@
     <i class="material-icons">add_circle_outline</i>
   </button>
   <mat-table id="table" class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
-    <ng-container matColumnDef="item_id">
+    <ng-container matColumnDef="id">
       <mat-header-cell *matHeaderCellDef>ID No.</mat-header-cell>
-      <mat-cell *matCellDef="let row">{{ row.item_id }}</mat-cell>
+      <mat-cell *matCellDef="let row">{{ row.id }}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="item">
       <mat-header-cell *matHeaderCellDef>Item</mat-header-cell>

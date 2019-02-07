@@ -17,7 +17,7 @@ export class LocationDetailsComponent implements OnInit {
   inventory: Inventory[]
   dataSource: any
   
-  displayed = ['item_id', 'item', 'description', 'par', 'quantity'];
+  displayed = ['id', 'item', 'description', 'par', 'quantity'];
 
   constructor(
     private route: ActivatedRoute,

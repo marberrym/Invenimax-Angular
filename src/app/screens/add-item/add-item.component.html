@@ -9,9 +9,14 @@
       <textarea matInput placeholder="Item Description" [(ngModel)]="model.description"></textarea>
     </mat-form-field>
     <mat-form-field class="formInput">
-      <mat-label>Par Inventory Count</mat-label>
+      <mat-label>Par</mat-label>
       <input matInput placeholder="Par Count" [(ngModel)]="model.par">
       <mat-hint>The minimum amount you should have on hand at any given time.</mat-hint>
+    </mat-form-field>
+    <mat-form-field class="formInput">
+      <mat-label>Quantity</mat-label>
+      <input matInput placeholder="Par Count" [(ngModel)]="model.quantity">
+      <mat-hint>The amount you currently have on hand.</mat-hint>
     </mat-form-field>
     <button mat-raised-button color="primary" class="btn" (click)="addItem()">Add Item 
         <i class="material-icons">add_circle_outline</i>

@@ -23,10 +23,10 @@ let locationDetail = (req, res) => {
 
     let items = db.query(
         `SELECT inventory.item, inventory.description, inventory.par,
-        inven_bridge.quantity, inventory.location_id, inven_bridge.item_id
+        inven_bridge.quantity, inventory.location_id, inventory.id
         FROM inventory, inven_bridge 
         WHERE
-        inventory.id = inven_bridge.item_id AND inventory.location_id=$1
+        inventory.location_id=$1 AND inventory.id = inven_bridge.item_id
         `, [locID]
     )
     

@@ -1,7 +1,7 @@
 export class Inventory {
     constructor(
         public item: string,
-        public item_id: number,
+        public id: number,
         public location_id: number,
         public description: string,
         public par: number,
