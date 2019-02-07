@@ -31,7 +31,8 @@ export class NewLocationService {
   newLocation(model) {
     return this.http.post(`${this.baseUrl}/locations`, model, this.httpOptions)
     .subscribe(res => {
-      console.log(res)
+      console.log(res);
+      this.router.navigate(['locations']);
     })
   }
 

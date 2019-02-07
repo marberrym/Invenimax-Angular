@@ -1,42 +1,28 @@
-<div class="formContainer">
-    <h2>Location Form</h2>
-    <form #f="ngForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-            <label for="name">Location Name:</label>
-            <input [(ngModel)]="model.name" 
-                name="name" 
-                type="text" 
-                class="form-control" 
-                id="name" required>
-            <div>Name is {{ model.name }}</div>
-        </div>
-        <div class="form-group">
-            <label for="address">Address:</label>
-            <input [(ngModel)]="model.address"
-                name="address"
-                type="text" 
-                class="form-control" 
-                id="address" required>
-            <div>Address is {{ model.address }}</div>
-        </div>
-        <div class="form-group">
-            <label for="city">Location city:</label>
-            <input [(ngModel)]="model.city" 
-                name="city"
-                type="text" 
-                class="form-control" 
-                id="city" required>
-            <div>city is {{ model.city }}</div>
-        </div>
-        <div class="form-group">
-            <label for="city">Location State:</label>
-            <div>
-                <select [(ngModel)]="model.state" name="state" class="form-control" id="state" required>
-                    <option *ngFor= "let state of states" value="{{ state }}">{{ state }}</option>
-                </select>
-                <div>state is {{ model.state }}</div>
-            </div>
-        </div>
-        <button mat-raised-button color="accent" (click)="onSubmit()">Add Location</button>
-    </form>
+<div class="pageLayout">
+  <div class="formContainer">
+    <mat-form-field class="formInput">
+      <mat-label>Location Name</mat-label>
+      <input matInput [(ngModel)]="model.name" placeholder="Location Name">
+    </mat-form-field>
+    <mat-form-field class="formInput">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="model.address" placeholder="Location Address">
+    </mat-form-field>
+    <mat-form-field class="formInput">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="model.city" placeholder="Location City">
+    </mat-form-field> 
+    <mat-form-field class="formInput">
+        <mat-label>State</mat-label>
+        <mat-select placeholder="State" [(ngModel)]="model.state">
+          <mat-option *ngFor="let state of states" value="{{ state }}">{{ state }}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+      {{ model.state }}
+    </div>   
+    <button mat-raised-button color="primary" class="btn" (click)="onSubmit()">Add Location 
+        <i class="material-icons">add_circle_outline</i>
+    </button>
+  </div>
 </div>

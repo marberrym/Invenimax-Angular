@@ -1,5 +1,5 @@
 .logo {
-    height: 10em;
+    height: 7em;
     margin: 1em;
 }
 
@@ -8,16 +8,15 @@
     justify-content: center;
     align-items: center;
     margin-top: 3em;
-    
 }
 
 h1 {
     font-family: 'Staatliches', cursive;
-    font-size: 6em;
+    font-size: 3em;
 }
 
 .tagline {
-    font-size: 1.2em;
+    font-size: .6em;
     font-family: 'Staatliches', cursive;
     color: rgb(97, 96, 96);
 }
@@ -33,5 +32,20 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media only screen and (min-width: 600px) {
+    .logo {
+        height: 10em;
+        margin: 1em;
+    }
+
+    h1 {
+        font-size: 6em;
+    }
+
+    .tagline {
+        font-size: 1.2em;
+    }
 }
 

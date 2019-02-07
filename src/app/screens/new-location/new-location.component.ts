@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Location } from './location';
 import { NewLocationService } from './new-location.service'
 
+
 @Component({
     selector: 'app-new-location-form',
     templateUrl: './new-location.component.html',
@@ -10,7 +11,9 @@ import { NewLocationService } from './new-location.service'
 
 export class NewLocationComponent {
 
-    constructor(private newLocationService: NewLocationService) {}
+    constructor(
+        private newLocationService: NewLocationService
+    ) {}
 
     model = new Location();
     submitted = false;
