@@ -1,4 +1,5 @@
-DROP TABLE IF EXISTS locations, users CASCADE;
+DROP TABLE IF EXISTS locations, users, inventory, inven_bridge,
+transactions, notes CASCADE;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -31,7 +32,8 @@ CREATE TABLE inven_bridge (
   user_id INTEGER REFERENCES users(id),
   location_id INTEGER REFERENCES locations(id),
   item_id INTEGER REFERENCES inventory(id),
-  quantity INTEGER NOT NULL
+  quantity INTEGER NOT NULL,
+  surplus INTEGER NOT NULL
 );
 
 CREATE TABLE transactions (

@@ -6,5 +6,6 @@ export class Inventory {
         public description: string,
         public par: number,
         public quantity: number,
+        public surplus: number,
     ){}
 }

@@ -24,6 +24,28 @@
       <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
       <mat-cell *matCellDef="let row">{{ row.quantity }}</mat-cell>
     </ng-container>
+    <ng-container matColumnDef="surplus">
+      <mat-header-cell *matHeaderCellDef>Surplus</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <div *ngIf="row.surplus < 0; else elseBlock" class="shortage">{{ row.surplus }}</div>
+        <ng-template #elseBlock>
+          <div class="excess">{{ row.surplus }}</div>
+        </ng-template>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="manage">
+      <mat-header-cell *matHeaderCellDef>Manage</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <i class="material-icons">settings_applications</i>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <i class="material-icons delete">delete_forever</i>
+      </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayed"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayed"></mat-row>
   </mat-table>
