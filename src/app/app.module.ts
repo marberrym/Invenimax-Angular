@@ -17,7 +17,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ImheadComponent } from './components/imhead/imhead.component';
 import { MyLocationsComponent } from './screens/my-locations/my-locations.component';
 import { LocationDetailsComponent } from './screens/location-details/location-details.component';
-import { AddItemComponent } from './screens/add-item/add-item.component'
+import { AddItemComponent } from './screens/add-item/add-item.component';
+import { DialogBoxComponent } from './components/dialog-box/dialog-box.component'
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AddItemComponent } from './screens/add-item/add-item.component'
     MyLocationsComponent,
     LocationDetailsComponent,
     AddItemComponent,
+    DialogBoxComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,6 +4,7 @@ import { LocationDetailsService } from './location-details.service';
 import { LocationDetails } from './location-details';
 import { Inventory } from './inventory';
 import { MatTableDataSource } from '@angular/material';
+import { DialogBoxComponent } from 'src/app/components/dialog-box/dialog-box.component';
 
 @Component({
   selector: 'app-location-details',
@@ -22,7 +23,8 @@ export class LocationDetailsComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private locationService: LocationDetailsService,
-    private router: Router
+    private router: Router,
+    // public dialogBox: DialogBoxComponent,
   ) {
     this.locID = this.route.snapshot.queryParams.loc
   }
@@ -39,6 +41,19 @@ export class LocationDetailsComponent implements OnInit {
 
   addItem() {
     this.router.navigate(['additem'], { queryParams: { loc: this.locID }})
+  }
+
+  removeItem(id) {
+    this.inventory = this.inventory.filter(item => item.id != id);
+    this.dataSource = new MatTableDataSource<Inventory>(this.inventory);
+    this.locationService.removeItem(id)
+    .subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  openMenu() {
+    // this.dialogBox.openDialog()
   }
 
 }

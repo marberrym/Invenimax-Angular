@@ -42,7 +42,7 @@
     <ng-container matColumnDef="delete">
       <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <i class="material-icons delete">delete_forever</i>
+        <i class="material-icons delete" (click)="removeItem(row.id)">delete_forever</i>
       </mat-cell>
     </ng-container>
 

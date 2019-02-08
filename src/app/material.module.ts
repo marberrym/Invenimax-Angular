@@ -11,6 +11,7 @@ import {
     MatOptionModule,
     MatSelectModule,
     MatToolbarModule,
+    MatDialogModule,
 } from '@angular/material'
 
 @NgModule({
@@ -24,7 +25,7 @@ import {
         MatOptionModule,
         MatSelectModule,
         MatToolbarModule,
-        
+        MatDialogModule,
     ],
     exports: [
         MatButtonModule,
@@ -37,6 +38,7 @@ import {
         MatOptionModule,
         MatSelectModule,
         MatToolbarModule,
+        MatDialogModule,
     ]
 })
 

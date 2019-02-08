@@ -15,11 +15,17 @@ export class LocationDetailsService {
   } 
 
   endPoint = "http://localhost:5000/locations/"
+  itemEndpoint = "http://localhost:5000/item/"
+
   constructor(
     private http: HttpClient
   ) {}
 
   getLocationInfo(id) {
     return this.http.get<LocationDetails>(this.endPoint + id, this.httpOptions)
+  }
+
+  removeItem(id) {
+    return this.http.delete(this.itemEndpoint + id, this.httpOptions)
   }
 }

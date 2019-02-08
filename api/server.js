@@ -26,6 +26,7 @@ const logIn = require('./routes/logIn');
 const newLocation = require('./routes/newLocation');
 const locationDetail = require('./routes/locationDetail');
 const newItem = require('./routes/newItem.js');
+const removeItem = require('./routes/removeItem.js');
 
 //App setup
 app.use(bodyParser.json());
@@ -38,6 +39,7 @@ app.get('/locations/:loc', locationDetail);
 
 //Item Endpoints
 app.post('/item/:loc', newItem);
+app.delete('/item/:item', removeItem);
 
 
 //New User
