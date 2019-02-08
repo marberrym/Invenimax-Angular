@@ -52,6 +52,10 @@ export class LocationDetailsComponent implements OnInit {
     })
   }
 
+  setItem(row) {
+    this.locationService.editItem(row);
+  }
+
   openMenu() {
     // this.dialogBox.openDialog()
   }

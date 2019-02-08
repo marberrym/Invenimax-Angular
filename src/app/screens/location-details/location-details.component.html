@@ -36,7 +36,7 @@
     <ng-container matColumnDef="manage">
       <mat-header-cell *matHeaderCellDef>Manage</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <i class="material-icons">settings_applications</i>
+        <i class="material-icons edit" (click)="setItem(row)" >settings_applications</i>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="delete">

@@ -7,6 +7,7 @@ import { LoginComponent } from './screens/login/login.component';
 import { MyLocationsComponent } from './screens/my-locations/my-locations.component';
 import { LocationDetailsComponent } from './screens/location-details/location-details.component';
 import { AddItemComponent } from './screens/add-item/add-item.component';
+import { EditItemComponent } from './screens/edit-item/edit-item.component';
 
 const routes: Routes = [
   {path: 'about', component: AboutComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'newlocation', component: NewLocationComponent},
   {path: 'additem', component: AddItemComponent},
+  {path: 'edititem', component: EditItemComponent}
   // {path: 'about', component: },
   // {path: '', component: }
 ]
