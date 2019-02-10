@@ -38,16 +38,16 @@ CREATE TABLE inven_bridge (
 
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  location_id INTEGER REFERENCES locations(id),
   inventory_id INTEGER REFERENCES inventory(id),
+  date TIMESTAMP,
+  prev_quantity INTEGER NOT NULL,
   inven_change INTEGER NOT NULL,
-  note varchar(255) DEFAULT ''
+  note varchar(255) NOT NULL
 );
 
-CREATE TABLE notes (
+CREATE TABLE item_notes (
   id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  location_id INTEGER REFERENCES locations(id),
+  date TIMESTAMP,
+  item_id INTEGER REFERENCES inventory(id),
   note varchar(255) NOT NULL
 );

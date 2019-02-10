@@ -53,7 +53,7 @@ export class LocationDetailsComponent implements OnInit {
   }
 
   setItem(row) {
-    this.locationService.editItem(row);
+    this.locationService.editItem(row, this.locID);
   }
 
   openMenu() {

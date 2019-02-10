@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Inventory } from '../location-details/inventory';
-import { LocationDetailsComponent } from '../location-details/location-details.component';
 import { LocationDetailsService } from '../location-details/location-details.service';
+import { ActivatedRoute } from '@angular/router';
+import { EditItemService } from './edit-item.service';
 
 @Component({
   selector: 'app-edit-item',
@@ -11,18 +12,24 @@ import { LocationDetailsService } from '../location-details/location-details.ser
 export class EditItemComponent implements OnInit {
 
   item: Inventory
+  itemID: number
+  storeID: number
 
   constructor(
-    private locationDetails: LocationDetailsService
-  ) {}
+    private locationDetails: LocationDetailsService,
+    private edit: EditItemService,
+    private route: ActivatedRoute
+  ) {
+    this.itemID = this.route.snapshot.queryParams.item;
+    this.storeID = this.route.snapshot.queryParams.store;
+  }
 
   ngOnInit() {
     this.locationDetails.change.subscribe(editItem => {
       this.item = editItem;
     })
-    
   }
 
-  
+
 
 }
