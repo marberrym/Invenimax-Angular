@@ -27,6 +27,7 @@ const newLocation = require('./routes/newLocation');
 const locationDetail = require('./routes/locationDetail');
 const newItem = require('./routes/newItem.js');
 const removeItem = require('./routes/removeItem.js');
+const getItem = require('./routes/getItem');
 
 //App setup
 app.use(bodyParser.json());
@@ -38,6 +39,7 @@ app.post('/locations', newLocation);
 app.get('/locations/:loc', locationDetail);
 
 //Item Endpoints
+app.get('/item/:item', getItem);
 app.post('/item/:loc', newItem);
 app.delete('/item/:item', removeItem);
 
