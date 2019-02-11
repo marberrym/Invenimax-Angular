@@ -4,6 +4,7 @@ import { EditItemService } from './edit-item.service';
 import { ItemResponse } from './item-response';
 import { MatDialog } from '@angular/material';
 import { NewTransactionComponent } from 'src/app/components/new-transaction/new-transaction.component';
+import { NewItemNoteComponent } from 'src/app/components/new-item-note/new-item-note.component';
 
 @Component({
   selector: 'app-edit-item',
@@ -35,6 +36,10 @@ export class EditItemComponent implements OnInit {
 
   newTransaction() {
     this.dialog.open(NewTransactionComponent);
+  }
+
+  newNote() {
+    this.dialog.open(NewItemNoteComponent);
   }
 
 

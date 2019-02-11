@@ -20,7 +20,8 @@ import { LocationDetailsComponent } from './screens/location-details/location-de
 import { AddItemComponent } from './screens/add-item/add-item.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
 import { EditItemComponent } from './screens/edit-item/edit-item.component';
-import { NewTransactionComponent } from './components/new-transaction/new-transaction.component'
+import { NewTransactionComponent } from './components/new-transaction/new-transaction.component';
+import { NewItemNoteComponent } from './components/new-item-note/new-item-note.component'
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { NewTransactionComponent } from './components/new-transaction/new-transa
     DialogBoxComponent,
     EditItemComponent,
     NewTransactionComponent,
+    NewItemNoteComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,9 @@ import { NewTransactionComponent } from './components/new-transaction/new-transa
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [NewTransactionComponent]
+  entryComponents: [
+    NewTransactionComponent,
+    NewItemNoteComponent,
+  ]
 })
 export class AppModule { }
