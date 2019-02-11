@@ -36,10 +36,20 @@ export class EditItemComponent implements OnInit {
 
   newTransaction() {
     this.dialog.open(NewTransactionComponent);
+    const dialogRef = this.dialog.open(NewTransactionComponent);
+
+    dialogRef.afterClosed().subscribe(
+      data => console.log(data)
+    )
   }
 
   newNote() {
     this.dialog.open(NewItemNoteComponent);
+    const dialogRef = this.dialog.open(NewItemNoteComponent);
+
+    dialogRef.afterClosed().subscribe(
+      data => console.log(data)
+    )
   }
 
 
