@@ -5,6 +5,8 @@ import { ItemResponse } from './item-response';
 import { MatDialog } from '@angular/material';
 import { NewTransactionComponent } from 'src/app/components/new-transaction/new-transaction.component';
 import { NewItemNoteComponent } from 'src/app/components/new-item-note/new-item-note.component';
+import * as moment from 'moment'
+
 
 @Component({
   selector: 'app-edit-item',
@@ -20,7 +22,7 @@ export class EditItemComponent implements OnInit {
   constructor(
     private edit: EditItemService,
     private route: ActivatedRoute,
-    private dialog: MatDialog
+    private dialog: MatDialog,
   ) {
     this.itemID = this.route.snapshot.queryParams.item;
     this.storeID = this.route.snapshot.queryParams.store;
@@ -49,7 +51,7 @@ export class EditItemComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(
       data => {
-        console.log(data)
+        console.log(data.date);
         this.item.notes = this.item.notes.concat(data)
         this.edit.newItemNote(this.itemID, data)
         .subscribe(res => console.log(res))

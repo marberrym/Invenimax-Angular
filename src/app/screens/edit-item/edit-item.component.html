@@ -29,7 +29,9 @@
   </mat-card-subtitle>
   <mat-card-content>
     <ol>
-      <li *ngFor="let note of item.notes">{{ note.note }}, {{ note.date }}</li>
+      <li *ngFor="let note of item.notes">{{ note.note }}
+        <div class="timeZone">{{note.date | date:"MM/dd/yyyy 'at' h:mma" : "EST"  }}</div>
+      </li>
     </ol>
   </mat-card-content>
   <mat-card-subtitle *ngIf="item.notes.length === 0">You currently have no notes for this item.</mat-card-subtitle>

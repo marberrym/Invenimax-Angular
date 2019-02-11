@@ -47,7 +47,7 @@ CREATE TABLE transactions (
 
 CREATE TABLE item_notes (
   id SERIAL PRIMARY KEY,
-  date TIMESTAMP,
+  date TIMESTAMP WITH TIME ZONE,
   item_id INTEGER REFERENCES inventory(id),
   note varchar(255) NOT NULL
 );
