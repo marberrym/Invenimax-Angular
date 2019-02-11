@@ -10,7 +10,11 @@ export class ItemResponse {
         quantity: number,
         surplus: number,
         transactions: Transactions[] = [],
-        notes: Notes[] = []
+        notes: Notes[] = [],
+        store: string,
+        address: string,
+        city: string,
+        state: string
     ){}
 
 }

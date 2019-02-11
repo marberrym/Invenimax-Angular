@@ -3,6 +3,15 @@ jwt = require('jsonwebtoken');
 
 let getItem = (req, res) => {
     let itemID = req.params.item;
+    let storeID = req.params.loc;
+
+    let store = db.one(
+        `SELECT
+        name, address, city, state
+        FROM locations
+        WHERE
+        id=$1`, [storeID]
+    )
     
     let item = db.one(
         `SELECT 
@@ -24,7 +33,7 @@ let getItem = (req, res) => {
         WHERE item_id=$1`, [itemID]
     )
 
-    Promise.all([item, transactions, notes])
+    Promise.all([item, transactions, notes, store])
     .then(data => {
         console.log(data);
         res.send({
@@ -35,7 +44,11 @@ let getItem = (req, res) => {
             quantity: data[0].quantity,
             surplus: data[0].surplus,
             transactions: data[1],
-            notes: data[2]
+            notes: data[2],
+            store: data[3].name,
+            address: data[3].address,
+            city: data[3].city,
+            state: data[3].state
         })
     })
     .catch(err => console.log(err))

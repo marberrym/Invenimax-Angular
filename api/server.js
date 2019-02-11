@@ -39,7 +39,7 @@ app.post('/locations', newLocation);
 app.get('/locations/:loc', locationDetail);
 
 //Item Endpoints
-app.get('/item/:item', getItem);
+app.get('/item/:loc/:item', getItem);
 app.post('/item/:loc', newItem);
 app.delete('/item/:item', removeItem);
 

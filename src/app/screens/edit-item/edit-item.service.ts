@@ -23,8 +23,8 @@ export class EditItemService {
     private router: Router
   ) { }
 
-  getItem(id) {
-    return this.http.get<ItemResponse>(this.endPoint + id, this.httpOptions)
+  getItem(storeid, itemid) {
+    return this.http.get<ItemResponse>(this.endPoint + `${storeid}/${itemid}`, this.httpOptions)
   }
 
 }

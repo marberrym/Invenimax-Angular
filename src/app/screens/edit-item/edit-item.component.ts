@@ -23,7 +23,7 @@ export class EditItemComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.edit.getItem(this.itemID)
+    this.edit.getItem(this.storeID, this.itemID)
     .subscribe(res =>{
       console.log(res);
       this.item = res
