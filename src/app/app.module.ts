@@ -19,7 +19,8 @@ import { MyLocationsComponent } from './screens/my-locations/my-locations.compon
 import { LocationDetailsComponent } from './screens/location-details/location-details.component';
 import { AddItemComponent } from './screens/add-item/add-item.component';
 import { DialogBoxComponent } from './components/dialog-box/dialog-box.component';
-import { EditItemComponent } from './screens/edit-item/edit-item.component'
+import { EditItemComponent } from './screens/edit-item/edit-item.component';
+import { NewTransactionComponent } from './components/new-transaction/new-transaction.component'
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { EditItemComponent } from './screens/edit-item/edit-item.component'
     AddItemComponent,
     DialogBoxComponent,
     EditItemComponent,
+    NewTransactionComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { EditItemComponent } from './screens/edit-item/edit-item.component'
     MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [NewTransactionComponent]
 })
 export class AppModule { }

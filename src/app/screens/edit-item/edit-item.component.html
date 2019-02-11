@@ -1,3 +1,31 @@
-<p>
-  edit-item works!
-</p>
+<mat-card class="contentCard">
+  <mat-card-title>{{ item.store }}</mat-card-title>
+  <mat-card-subtitle>{{ item.address }}, {{item.city}}, {{item.state}}</mat-card-subtitle>
+  <mat-card-title>{{ item.item }}</mat-card-title>
+  <mat-card-subtitle>Quantity on hand: {{ item.quantity }}</mat-card-subtitle>
+  <mat-card-subtitle>Par Quantity: {{ item.par }}</mat-card-subtitle>
+  <mat-card-subtitle>Current Surplus: {{ item.surplus }}</mat-card-subtitle>
+  <mat-card-content>Description: {{ item.description }}</mat-card-content>
+</mat-card>
+
+<mat-card class="contentCard">
+  <mat-card-title>Transactions</mat-card-title>
+  <mat-card-subtitle>
+    <button mat-raised-button color="accent" (click)="newTransaction()">
+      New Transaction
+      <i class="material-icons">add_circle_outline</i>
+    </button>
+  </mat-card-subtitle>
+  <mat-card-subtitle *ngIf="item.transactions.length === 0">You currently have no transactions for this item.</mat-card-subtitle>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Notes</mat-card-title>
+  <mat-card-subtitle>
+    <button mat-raised-button color="accent" (click)="newTransaction()">
+      New Note
+      <i class="material-icons">add_circle_outline</i>
+    </button>
+  </mat-card-subtitle>
+  <mat-card-subtitle *ngIf="item.notes.length === 0">You currently have no notes for this item.</mat-card-subtitle>
+</mat-card>

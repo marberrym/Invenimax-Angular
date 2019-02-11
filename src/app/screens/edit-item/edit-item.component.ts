@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { EditItemService } from './edit-item.service';
 import { ItemResponse } from './item-response';
+import { MatDialog } from '@angular/material';
+import { NewTransactionComponent } from 'src/app/components/new-transaction/new-transaction.component';
 
 @Component({
   selector: 'app-edit-item',
@@ -16,7 +18,8 @@ export class EditItemComponent implements OnInit {
 
   constructor(
     private edit: EditItemService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private dialog: MatDialog
   ) {
     this.itemID = this.route.snapshot.queryParams.item;
     this.storeID = this.route.snapshot.queryParams.store;
@@ -28,6 +31,10 @@ export class EditItemComponent implements OnInit {
       console.log(res);
       this.item = res
     })
+  }
+
+  newTransaction() {
+    this.dialog.open(NewTransactionComponent);
   }
 
 
