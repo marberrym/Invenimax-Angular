@@ -27,5 +27,10 @@
       <i class="material-icons">add_circle_outline</i>
     </button>
   </mat-card-subtitle>
+  <mat-card-content>
+    <ol>
+      <li *ngFor="let note of item.notes">{{ note.note }}, {{ note.date }}</li>
+    </ol>
+  </mat-card-content>
   <mat-card-subtitle *ngIf="item.notes.length === 0">You currently have no notes for this item.</mat-card-subtitle>
 </mat-card>

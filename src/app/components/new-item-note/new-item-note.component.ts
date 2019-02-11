@@ -24,7 +24,10 @@ export class NewItemNoteComponent implements OnInit {
   }
 
   onSave() {
-    this.dialogRef.close({note: this.note})
+    this.dialogRef.close({
+      note: this.note,
+      date: new Date()
+    })
   }
 
 }

@@ -48,8 +48,15 @@ export class EditItemComponent implements OnInit {
     const dialogRef = this.dialog.open(NewItemNoteComponent);
 
     dialogRef.afterClosed().subscribe(
-      data => console.log(data)
+      data => {
+        console.log(data)
+        this.item.notes = this.item.notes.concat(data)
+        this.edit.newItemNote(this.itemID, data)
+        .subscribe(res => console.log(res))
+      }
     )
+
+    
   }
 
 

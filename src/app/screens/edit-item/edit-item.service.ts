@@ -27,4 +27,8 @@ export class EditItemService {
     return this.http.get<ItemResponse>(this.endPoint + `${storeid}/${itemid}`, this.httpOptions)
   }
 
+  newItemNote(itemid, body) {
+    return this.http.post(`${this.endPoint}${itemid}/note`, body, this.httpOptions)
+  }
+
 }
