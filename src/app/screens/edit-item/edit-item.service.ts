@@ -31,4 +31,8 @@ export class EditItemService {
     return this.http.post(`${this.endPoint}${itemid}/note`, body, this.httpOptions)
   }
 
+  newTransaction(itemid, body) {
+    return this.http.put(`${this.endPoint}${itemid}`, body, this.httpOptions)
+  }
+
 }

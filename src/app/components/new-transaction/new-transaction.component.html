@@ -1,3 +1,23 @@
-<p>
-  new-transaction works!
-</p>
+
+<div class="formLayout">
+  <h1 mat-dialog-title>New Transaction</h1>
+  <mat-dialog-content>
+    <div class="formLayout">
+    <mat-form-field>
+      <input matInput placeholder="Note" [(ngModel)]="note">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Change in Inventory" [(ngModel)]="change">
+    </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+      <button mat-raised-button color="accent" (click)="onSave()" matDialogClose>
+        Add Transaction
+        <i class="material-icons">add_circle_outline</i>
+      </button>
+      <button mat-raised-button color="accent" (click)="onClose()" matDialogClose>
+        Cancel
+      </button>
+  </mat-dialog-actions>
+</div>

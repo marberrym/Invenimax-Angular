@@ -38,8 +38,8 @@ CREATE TABLE inven_bridge (
 
 CREATE TABLE transactions (
   id SERIAL PRIMARY KEY,
-  inventory_id INTEGER REFERENCES inventory(id),
-  date TIMESTAMP,
+  item_id INTEGER REFERENCES inventory(id),
+  date TIMESTAMP WITH TIME ZONE,
   prev_quantity INTEGER NOT NULL,
   inven_change INTEGER NOT NULL,
   note varchar(255) NOT NULL

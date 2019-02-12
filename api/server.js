@@ -29,6 +29,7 @@ const newItem = require('./routes/newItem.js');
 const removeItem = require('./routes/removeItem');
 const getItem = require('./routes/getItem');
 const newItemNote = require('./routes/newItemNote');
+const newTransaction = require('./routes/newTransaction');
 
 //App setup
 app.use(bodyParser.json());
@@ -44,6 +45,7 @@ app.get('/item/:loc/:item', getItem);
 app.post('/item/:loc', newItem);
 app.delete('/item/:item', removeItem);
 app.post('/item/:item/note', newItemNote);
+app.put('/item/:item', newTransaction);
 
 
 //New User

@@ -25,7 +25,7 @@ let getItem = (req, res) => {
 
     let transactions = db.query(
         `SELECT * FROM transactions
-        WHERE inventory_id=$1`, [itemID]
+        WHERE item_id=$1`, [itemID]
     )
 
     let notes = db.query(

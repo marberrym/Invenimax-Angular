@@ -6,7 +6,7 @@ body {
     background-color: rgb(231, 240, 248);
 }
 
-.pageLayout {
+.pageLayout, .formLayout {
     display: flex;
     align-items: center;
     flex-direction: column;

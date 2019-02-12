@@ -1,15 +1,17 @@
-<h1 mat-dialog-title>Add a New Note</h1>
-<mat-dialog-content>
-  <mat-form-field>
-    <textarea matInput placeholder="Input" [(ngModel)]="note"></textarea>
-  </mat-form-field>
-</mat-dialog-content>
-<mat-dialog-actions>
-    <button mat-raised-button color="accent" (click)="onSave()">
-      Add Note
-      <i class="material-icons">add_circle_outline</i>
-    </button>
-    <button mat-raised-button color="accent" (click)="onClose()">
-      Cancel
-    </button>
-</mat-dialog-actions>
+<div class="formLayout">
+  <h1 mat-dialog-title>Add a New Note</h1>
+  <mat-dialog-content>
+    <mat-form-field>
+      <textarea matInput placeholder="Input" [(ngModel)]="note"></textarea>
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+      <button mat-raised-button color="accent" (click)="onSave()" matDialogClose>
+        Add Note
+        <i class="material-icons">add_circle_outline</i>
+      </button>
+      <button mat-raised-button color="accent" (click)="onClose()" matDialogClose>
+        Cancel
+      </button>
+  </mat-dialog-actions>
+</div>

@@ -8,3 +8,11 @@
     font-weight: 700;
     color: rgb(194, 194, 194);
 }
+
+.loss {
+    color: red;
+}
+
+.gain {
+    color: green;
+}
