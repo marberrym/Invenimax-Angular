@@ -19,27 +19,9 @@ export class EditItemComponent implements OnInit {
   itemID: number
   storeID: number
   dataSource: any
-
-  chartData = {
-    chart: {
-      caption: 'Countries With Most Oil Reserves [2017-18]',
-      subCaption: 'In MMbbl = One Million barrels',
-      xAxisName: 'Country',
-      yAxisName: 'Reserves (MMbbl)',
-      numberSuffix: 'K',
-      theme: 'fusion'
-    },
-    data: [
-      { label: 'Venezuela', value: '290' },
-      { label: 'Saudi', value: '260' },
-      { label: 'Canada', value: '180' },
-      { label: 'Iran', value: '140' },
-      { label: 'Russia', value: '115' },
-      { label: 'UAE', value: '100' },
-      { label: 'US', value: '30' },
-      { label: 'China', value: '30' }
-    ]
-  };
+  chartData: any
+  loading: boolean = false;
+  
 
   displayed = ['date', 'note', 'prev_quantity', 'inven_change']
 
@@ -59,11 +41,132 @@ export class EditItemComponent implements OnInit {
   }
   
   ngOnInit() {
+    this.loading = true;
     this.edit.getItem(this.storeID, this.itemID)
     .subscribe(res =>{
       console.log(res);
       this.item = res;
       this.renderData();
+      this.chartData = {
+        chart: {
+          caption: `${this.item.item}`,
+          subCaption: 'Stock over time',
+          xAxisName: 'Time',
+          yAxisName: 'Units on Hand',
+          theme: 'candy'
+        },
+        trendlines: [{
+          "line": [{
+              "color": "red",
+              "thickness": "1",
+              "alpha": "60",
+              "value": "80",
+          }]
+        }],
+        categories: [
+          {
+            "category": [
+              {
+                "label": "2012"
+              },
+              {
+                "label": "2013"
+              },
+              {
+                "label": "2014"
+              },
+              {
+                "label": "2015"
+              },
+              {
+                "label": "2016"
+              }
+            ]
+          }
+        ],
+        dataset: [
+          {
+            "seriesname": "Par",
+            "data": [
+              {
+                "value": this.item.par
+              },
+              {
+                "value": this.item.par
+              },
+              {
+                "value": this.item.par
+              },
+              {
+                "value": this.item.par
+              },
+              {
+                "value": this.item.par
+              }
+            ]
+          },
+          {
+            "seriesname": "Instagram",
+            "data": [
+              {
+                "value": "16"
+              },
+              {
+                "value": "28"
+              },
+              {
+                "value": "34"
+              },
+              {
+                "value": "42"
+              },
+              {
+                "value": "54"
+              }
+            ]
+          },
+          {
+            "seriesname": "LinkedIn",
+            "data": [
+              {
+                "value": "20"
+              },
+              {
+                "value": "22"
+              },
+              {
+                "value": "27"
+              },
+              {
+                "value": "22"
+              },
+              {
+                "value": "29"
+              }
+            ]
+          },
+          {
+            "seriesname": "Twitter",
+            "data": [
+              {
+                "value": "18"
+              },
+              {
+                "value": "19"
+              },
+              {
+                "value": "21"
+              },
+              {
+                "value": "21"
+              },
+              {
+                "value": "24"
+              }
+            ]
+          }]
+      };
+      this.loading = false;
     })
   }
 

@@ -1,7 +1,8 @@
 <fusioncharts
+  *ngIf="!loading"
   height="350"
   width="100%"
-  type="Column2D"
+  type="msline"
   dataFormat="json"
   [dataSource]="chartData">
 </fusioncharts>

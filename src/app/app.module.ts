@@ -9,7 +9,7 @@ import { MaterialModule } from './material.module';
 import { FusionChartsModule } from 'angular-fusioncharts';
 import * as FusionCharts from 'fusioncharts';
 import * as Charts from 'fusioncharts/fusioncharts.charts';
-import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.candy';
 
 import { NewLocationComponent } from './screens/new-location/new-location.component';
 import { GradientButtonComponent } from './components/buttons/gradient-button/gradientButton.component';
