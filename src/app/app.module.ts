@@ -5,7 +5,11 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { MaterialModule } from './material.module'
+import { MaterialModule } from './material.module';
+import { FusionChartsModule } from 'angular-fusioncharts';
+import * as FusionCharts from 'fusioncharts';
+import * as Charts from 'fusioncharts/fusioncharts.charts';
+import * as FusionTheme from 'fusioncharts/themes/fusioncharts.theme.fusion';
 
 import { NewLocationComponent } from './screens/new-location/new-location.component';
 import { GradientButtonComponent } from './components/buttons/gradient-button/gradientButton.component';
@@ -22,6 +26,8 @@ import { DialogBoxComponent } from './components/dialog-box/dialog-box.component
 import { EditItemComponent } from './screens/edit-item/edit-item.component';
 import { NewTransactionComponent } from './components/new-transaction/new-transaction.component';
 import { NewItemNoteComponent } from './components/new-item-note/new-item-note.component'
+
+FusionChartsModule.fcRoot(FusionCharts, Charts, FusionTheme);
 
 @NgModule({
   declarations: [
@@ -49,6 +55,7 @@ import { NewItemNoteComponent } from './components/new-item-note/new-item-note.c
     FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FusionChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
