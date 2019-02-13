@@ -6,6 +6,8 @@ import { MatDialog, MatTableDataSource } from '@angular/material';
 import { NewTransactionComponent } from 'src/app/components/new-transaction/new-transaction.component';
 import { NewItemNoteComponent } from 'src/app/components/new-item-note/new-item-note.component';
 import { Transactions } from './transactions';
+import * as moment from 'moment';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -21,6 +23,7 @@ export class EditItemComponent implements OnInit {
   dataSource: any
   chartData: any
   loading: boolean = false;
+  datePipe = new DatePipe('en-US')
   
 
   displayed = ['date', 'note', 'prev_quantity', 'inven_change']
@@ -36,8 +39,49 @@ export class EditItemComponent implements OnInit {
     this.storeID = this.route.snapshot.queryParams.store;
   }
 
-  renderData() {
+  renderTable() {
     this.dataSource = new MatTableDataSource<Transactions>(this.item.transactions);
+  }
+  
+  generateGraph(transactions) {
+    let categories = [];
+    let values = [];
+    transactions.forEach(element => {
+      categories.push({label: this.datePipe.transform(element.date, 'short')})
+      values.push({value: element.prev_quantity + element.inven_change})
+    });
+
+    this.chartData = {
+      chart: {
+        caption: this.item.item,
+        subCaption: 'Stock over time',
+        xAxisName: 'Time',
+        yAxisName: 'Units on Hand',
+        theme: 'candy',
+        
+      },
+      trendlines: [{
+        line: [{
+            "color": "#FF6347",
+            "thickness": "3",
+            "alpha": "60",
+            "value": this.item.par,
+            "dashed": "1",
+        }]
+      }],
+      categories: [
+        {
+          category: categories
+        }
+      ],
+      dataset: [
+        {
+          "seriesname": this.item.item,
+          "data": values
+        }
+      ]
+    };
+    
   }
   
   ngOnInit() {
@@ -46,126 +90,8 @@ export class EditItemComponent implements OnInit {
     .subscribe(res =>{
       console.log(res);
       this.item = res;
-      this.renderData();
-      this.chartData = {
-        chart: {
-          caption: `${this.item.item}`,
-          subCaption: 'Stock over time',
-          xAxisName: 'Time',
-          yAxisName: 'Units on Hand',
-          theme: 'candy'
-        },
-        trendlines: [{
-          "line": [{
-              "color": "red",
-              "thickness": "1",
-              "alpha": "60",
-              "value": "80",
-          }]
-        }],
-        categories: [
-          {
-            "category": [
-              {
-                "label": "2012"
-              },
-              {
-                "label": "2013"
-              },
-              {
-                "label": "2014"
-              },
-              {
-                "label": "2015"
-              },
-              {
-                "label": "2016"
-              }
-            ]
-          }
-        ],
-        dataset: [
-          {
-            "seriesname": "Par",
-            "data": [
-              {
-                "value": this.item.par
-              },
-              {
-                "value": this.item.par
-              },
-              {
-                "value": this.item.par
-              },
-              {
-                "value": this.item.par
-              },
-              {
-                "value": this.item.par
-              }
-            ]
-          },
-          {
-            "seriesname": "Instagram",
-            "data": [
-              {
-                "value": "16"
-              },
-              {
-                "value": "28"
-              },
-              {
-                "value": "34"
-              },
-              {
-                "value": "42"
-              },
-              {
-                "value": "54"
-              }
-            ]
-          },
-          {
-            "seriesname": "LinkedIn",
-            "data": [
-              {
-                "value": "20"
-              },
-              {
-                "value": "22"
-              },
-              {
-                "value": "27"
-              },
-              {
-                "value": "22"
-              },
-              {
-                "value": "29"
-              }
-            ]
-          },
-          {
-            "seriesname": "Twitter",
-            "data": [
-              {
-                "value": "18"
-              },
-              {
-                "value": "19"
-              },
-              {
-                "value": "21"
-              },
-              {
-                "value": "21"
-              },
-              {
-                "value": "24"
-              }
-            ]
-          }]
-      };
+      this.renderTable();
+      this.generateGraph(this.item.transactions)
       this.loading = false;
     })
   }
@@ -187,7 +113,8 @@ export class EditItemComponent implements OnInit {
           this.item.quantity = this.item.quantity + body.inven_change;
           this.item.surplus = this.item.surplus + Number(data.change);
           this.item.transactions = this.item.transactions.concat(body);
-          this.renderData();
+          this.renderTable();
+          this.generateGraph(this.item.transactions);
           this.edit.newTransaction(this.itemID, body).subscribe(res => {
             console.log(res);
           })
